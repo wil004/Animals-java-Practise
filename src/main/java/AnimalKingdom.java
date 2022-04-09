@@ -44,6 +44,93 @@ public class AnimalKingdom {
         }
     }
 
+    protected static String animalInformation(Animal animal, String task) {
+        if (animal instanceof Crocodile animalForTask) {
+            switch (task) {
+                case "swim" -> {
+                    return animalForTask.swim();
+                }
+                case "walk" -> {
+                    return animalForTask.walks();
+                }
+                case "reproduction" -> {
+                    return animalForTask.laysEggs();
+                }
+            }
+        } else if (animal instanceof Dolphin animalForTask) {
+            switch (task) {
+                case "swim" -> {
+                    return animalForTask.swim();
+                }
+                case "reproduction" -> {
+                    return animalForTask.givesBirth();
+                }
+            }
+        } else if (animal instanceof Elephant animalForTask) {
+            switch (task) {
+                case "walk" -> {
+                    return animalForTask.walks();
+                }
+                case "reproduction" -> {
+                    return animalForTask.givesBirth();
+                }
+            }
+        } else if (animal instanceof Flamingo animalForTask) {
+            switch (task) {
+                case "walk" -> {
+                    return animalForTask.walks();
+                }
+                case "reproduction" -> {
+                    return animalForTask.laysEggs();
+                }
+            }
+        } else if (animal instanceof Lion animalForTask) {
+            switch (task) {
+                case "walk" -> {
+                    return animalForTask.walks();
+                }
+                case "reproduction" -> {
+                    return animalForTask.givesBirth();
+                }
+            }
+        } else if (animal instanceof Penguin animalForTask) {
+            switch (task) {
+                case "swim" -> {
+                    return animalForTask.swim();
+                }
+                case "walk" -> {
+                    return animalForTask.walks();
+                }
+                case "slide" -> {
+                    return animalForTask.slides();
+                }
+                case "reproduction" -> {
+                    return animalForTask.laysEggs();
+                }
+
+            }
+        } else if (animal instanceof Shark animalForTask) {
+            switch (task) {
+                case "swim" -> {
+                    return animalForTask.swim();
+                }
+                case "reproduction" -> {
+                    return animalForTask.laysEggs();
+                }
+            }
+        } else if (animal instanceof Snake animalForTask) {
+            switch (task) {
+                case "slide" -> {
+                    return animalForTask.slides();
+                }
+                case "reproduction" -> {
+                    return animalForTask.laysEggs();
+                }
+            }
+        }
+        return "";
+    }
+
     public static void allAnimalInformation() {
         for(int i = 0; i < allAnimals.size(); i++) {
             System.out.println("______"+ allAnimals.get(i).getName() + "_______");
@@ -51,42 +138,14 @@ public class AnimalKingdom {
             allAnimals.get(i).makesSound();
             allAnimals.get(i).getsFed();
             allAnimals.get(i).sleeps();
-            if (allAnimals.get(i) instanceof Crocodile crocodile) {
-                crocodile.swim();
-                crocodile.walks();
-                crocodile.laysEggs();
-                System.out.println("_______________________________________________");
-            } else if (allAnimals.get(i) instanceof Dolphin dolphin) {
-                dolphin.swim();
-                dolphin.givesBirth();
-                System.out.println("_______________________________________________");
-            } else if (allAnimals.get(i) instanceof Elephant elephant) {
-                elephant.walks();
-                elephant.givesBirth();
-                System.out.println("_______________________________________________");
-            } else if (allAnimals.get(i) instanceof Flamingo flamingo) {
-                flamingo.walks();
-                flamingo.laysEggs();
-                System.out.println("_______________________________________________");
-            } else if (allAnimals.get(i) instanceof Lion lion) {
-                lion.walks();
-                lion.givesBirth();
-                System.out.println("_______________________________________________");
-            } else if (allAnimals.get(i) instanceof Penguin penguin) {
-                penguin.walks();
-                penguin.swim();
-                penguin.slides();
-                penguin.laysEggs();
-                System.out.println("_______________________________________________");
-            } else if (allAnimals.get(i) instanceof Shark shark) {
-                shark.swim();
-                shark.laysEggs();
-                System.out.println("_______________________________________________");
-            } else if (allAnimals.get(i) instanceof Snake snake) {
-                snake.slides();
-                snake.laysEggs();
-                System.out.println("_______________________________________________");
+            if(allAnimals.get(i).doesAnimalSwim()) {
+                System.out.println(animalInformation(allAnimals.get(i), "swim"));
+            } if(allAnimals.get(i).doesAnimalWalk()) {
+                System.out.println(animalInformation(allAnimals.get(i), "walk"));
+            } if(allAnimals.get(i).doesAnimalSlide()) {
+                System.out.println(animalInformation(allAnimals.get(i), "slide"));
             }
+                System.out.println(animalInformation(allAnimals.get(i), "reproduction"));
         }
     }
 
@@ -97,102 +156,23 @@ public class AnimalKingdom {
         animal.makesSound();
         animal.getsFed();
         animal.sleeps();
-        if (animal instanceof Crocodile crocodile) {
-            crocodile.swim();
-            crocodile.walks();
-            crocodile.laysEggs();
-        } else if (animal instanceof Dolphin dolphin) {
-            dolphin.swim();
-            dolphin.givesBirth();
-        } else if (animal instanceof Elephant elephant) {
-            elephant.walks();
-            elephant.givesBirth();
-        } else if (animal instanceof Flamingo flamingo) {
-            flamingo.walks();
-            flamingo.laysEggs();
-        } else if (animal instanceof Lion lion) {
-            lion.walks();
-            lion.givesBirth();
-        } else if (animal instanceof Penguin penguin) {
-            penguin.walks();
-            penguin.swim();
-            penguin.slides();
-            penguin.laysEggs();
-        } else if (animal instanceof Shark shark) {
-            shark.swim();
-            shark.laysEggs();
-        } else if (animal instanceof Snake snake) {
-            snake.slides();
-            snake.laysEggs();
+        if(animal.doesAnimalSwim()) {
+            System.out.println(animalInformation(animal, "swim"));
+        } if(animal.doesAnimalWalk()) {
+            System.out.println(animalInformation(animal, "walk"));
+        } if(animal.doesAnimalSlide()) {
+            System.out.println(animalInformation(animal, "slide"));
         }
-
+        System.out.println(animalInformation(animal, "reproduction"));
     }
 
-    private static void animalInformation(Animal animal, String task) {
-        switch(task) {
-            case "sound":
-                animal.makesSound();
-                break;
-            case "food":
-                animal.getsFed();
-                break;
-            case "sleep":
-                animal.sleeps();
-                break;
-            default:
-                if (animal instanceof Crocodile animalForTask) {
-                    switch (task) {
-                        case "swim" -> animalForTask.swim();
-                        case "walk" -> animalForTask.walks();
-                        case "reproduction" -> animalForTask.laysEggs();
-                    }
-                } else if (animal instanceof Dolphin animalForTask) {
-                    switch (task) {
-                        case "swim" -> animalForTask.swim();
-                        case "reproduction" -> animalForTask.givesBirth();
-                    }
-                } else if (animal instanceof Elephant animalForTask) {
-                    switch (task) {
-                        case "walk" -> animalForTask.walks();
-                        case "reproduction" -> animalForTask.givesBirth();
-                    }
-                } else if (animal instanceof Flamingo animalForTask) {
-                    switch (task) {
-                        case "walk" -> animalForTask.walks();
-                        case "reproduction" -> animalForTask.laysEggs();
-                    }
-                } else if (animal instanceof Lion animalForTask) {
-                    switch (task) {
-                        case "walk" -> animalForTask.walks();
-                        case "reproduction" -> animalForTask.givesBirth();
-                    }
-                } else if (animal instanceof Penguin animalForTask) {
-                    switch (task) {
-                        case "swim" -> animalForTask.swim();
-                        case "walk" -> animalForTask.walks();
-                        case "slide" -> animalForTask.slides();
-                        case "reproduction" -> animalForTask.laysEggs();
-                    }
-                } else if (animal instanceof Shark animalForTask) {
-                    switch (task) {
-                        case "swim" -> animalForTask.swim();
-                        case "reproduction" -> animalForTask.laysEggs();
-                    }
-                } else if (animal instanceof Snake animalForTask) {
-                    switch (task) {
-                        case "slide" -> animalForTask.slides();
-                        case "reproduction" -> animalForTask.laysEggs();
-                    }
-                }
-        }
-    }
 
     public static void animalsThatCanSwim() {
         System.out.println("_____Animals that can swim!________");
         for(int i = 0; i < allAnimals.size(); i++) {
-            if (allAnimals.get(i).getSwims()) {
+            if (allAnimals.get(i).doesAnimalSwim()) {
                 System.out.println("-" + allAnimals.get(i).getName());
-                animalInformation(allAnimals.get(i), "swim");
+                System.out.println(animalInformation(allAnimals.get(i), "swim"));
                 System.out.println("______________________");
             }
         }
@@ -201,9 +181,9 @@ public class AnimalKingdom {
     public static void animalsThatCanWalk() {
         System.out.println("_____Animals that can walk!________");
         for(int i = 0; i < allAnimals.size(); i++) {
-            if (allAnimals.get(i).getWalks()) {
+            if (allAnimals.get(i).doesAnimalWalk()) {
                 System.out.println("-" + allAnimals.get(i).getName());
-                animalInformation(allAnimals.get(i), "walk");
+                System.out.println(animalInformation(allAnimals.get(i), "walk"));
                 System.out.println("______________________");
             }
         }
@@ -212,9 +192,9 @@ public class AnimalKingdom {
     public static void animalsThatCanSlide() {
         System.out.println("_____Animals that can Slide!________");
         for(int i = 0; i < allAnimals.size(); i++) {
-            if (allAnimals.get(i).getSlides()) {
+            if (allAnimals.get(i).doesAnimalSlide()) {
                 System.out.println("-" + allAnimals.get(i).getName());
-                animalInformation(allAnimals.get(i), "slide");
+                System.out.println(animalInformation(allAnimals.get(i), "slide"));
                 System.out.println("______________________");
             }
         }
@@ -223,9 +203,9 @@ public class AnimalKingdom {
     public static void animalsThatGiveBirth() {
         System.out.println("_____Animals that give birth!________");
         for(int i = 0; i < allAnimals.size(); i++) {
-            if (allAnimals.get(i).getGivesBirth()) {
+            if (allAnimals.get(i).doesAnimalGiveBirth()) {
                 System.out.println("-" + allAnimals.get(i).getName());
-                animalInformation(allAnimals.get(i), "reproduction");
+                System.out.println(animalInformation(allAnimals.get(i), "reproduction"));
                 System.out.println("______________________");
             }
         }
@@ -234,36 +214,36 @@ public class AnimalKingdom {
     public static void animalsThatLayEggs() {
         System.out.println("_____Animals that lay eggs!________");
         for(int i = 0; i < allAnimals.size(); i++) {
-            if (allAnimals.get(i).getLaysEggs()) {
+            if (allAnimals.get(i).doesAnimalLayEggs()) {
                 System.out.println("-" + allAnimals.get(i).getName());
-                animalInformation(allAnimals.get(i), "reproduction");
+                System.out.println(animalInformation(allAnimals.get(i), "reproduction"));
             }
         }
     }
 
     public static void herbivores() {
         System.out.println("Herbivores");
-        for(int i = 0; i < allAnimals.size(); i++) {
-            if(allAnimals.get(i).getFeature().equals("herbivore")) {
-                System.out.println("-" + allAnimals.get(i).getName());
+        for (Animal allAnimal : allAnimals) {
+            if (allAnimal.getFeature().equals("herbivore")) {
+                System.out.println("-" + allAnimal.getName());
             }
         }
     }
 
     public static void omnivores() {
         System.out.println("omnivores");
-        for(int i = 0; i < allAnimals.size(); i++) {
-            if(allAnimals.get(i).getFeature().equals("omnivore")) {
-                System.out.println("-" + allAnimals.get(i).getName());
+        for (Animal allAnimal : allAnimals) {
+            if (allAnimal.getFeature().equals("omnivore")) {
+                System.out.println("-" + allAnimal.getName());
             }
         }
     }
 
     public static void carnivore() {
         System.out.println("carnivores");
-        for(int i = 0; i < allAnimals.size(); i++) {
-            if(allAnimals.get(i).getFeature().equals("carnivore")) {
-                System.out.println("-" + allAnimals.get(i).getName());
+        for (Animal allAnimal : allAnimals) {
+            if (allAnimal.getFeature().equals("carnivore")) {
+                System.out.println("-" + allAnimal.getName());
             }
         }
     }

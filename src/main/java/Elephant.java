@@ -21,12 +21,12 @@ public class Elephant extends Animal implements GivesBirth, Walks{
     }
 
     @Override
-    public void givesBirth() {
-        System.out.println("An elephant doesnt lay eggs but gives birth from her body!");
+    public String givesBirth() {
+        return "An elephant doesnt lay eggs but gives birth from her body!";
     }
 
     @Override
-    public void walks() {
-        System.out.println("An elephant walks with his heavy body!");
+    public String walks() {
+       return "An elephant walks with his heavy body!";
     }
 }

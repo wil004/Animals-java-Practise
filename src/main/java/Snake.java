@@ -21,12 +21,12 @@ public class Snake extends Animal implements LaysEggs, Slides {
     }
 
     @Override
-    public void laysEggs() {
-        System.out.println("The snake lays a lot of eggs every month");
+    public String laysEggs() {
+        return "The snake lays a lot of eggs every month";
     }
 
     @Override
-    public void slides() {
-        System.out.println("A snake can only slide");
+    public String slides() {
+        return "A snake can only slide";
     }
 }

@@ -22,17 +22,17 @@ public class Crocodile extends Animal implements Swimmable, Walks, LaysEggs {
         System.out.println(super.getName() + " sleeps 12 hours a day");
     }
 
-    public void swim() {
-        System.out.println("The crocodile Swims very sneakily");
+    public String swim() {
+        return "The crocodile Swims very sneakily";
     }
 
     @Override
-    public void walks() {
-        System.out.println("The crocodile can run suprisingly fast!");
+    public String walks() {
+        return "The crocodile can run suprisingly fast!";
     }
 
     @Override
-    public void laysEggs() {
-        System.out.println("The crocodile lays eggs");
+    public String laysEggs() {
+        return "The crocodile lays eggs";
     }
 }

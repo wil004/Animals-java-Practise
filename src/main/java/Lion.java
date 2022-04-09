@@ -21,12 +21,12 @@ public class Lion extends Animal implements GivesBirth, Walks{
     }
 
     @Override
-    public void givesBirth() {
-        System.out.println("A lion is a mammal so gives birth from her body.");
+    public String givesBirth() {
+        return "A lion is a mammal so gives birth from her body.";
     }
 
     @Override
-    public void walks() {
-        System.out.println("A lion can walk and even run incredibly fast!");
+    public String walks() {
+        return "A lion can walk and even run incredibly fast!";
     }
 }

@@ -23,22 +23,22 @@ public class Penguin extends Animal implements LaysEggs, Slides, Walks, Swimmabl
     }
 
     @Override
-    public void laysEggs() {
-        System.out.println("Lays 2 eggs every year");
+    public String laysEggs() {
+        return "Lays 2 eggs every year";
     }
 
     @Override
-    public void slides() {
-        System.out.println("Can slide to move forward");
+    public String slides() {
+        return "Can slide to move forward";
     }
 
     @Override
-    public void swim() {
-        System.out.println("The penguin can swim 30 kmu");
+    public String swim() {
+        return "The penguin can swim 30 kmu";
     }
 
     @Override
-    public void walks() {
-        System.out.println("The penguin woggles when he walks");
+    public String walks() {
+        return "The penguin woggles when he walks";
     }
 }

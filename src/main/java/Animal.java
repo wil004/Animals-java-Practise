@@ -39,11 +39,11 @@ public abstract class Animal {
     protected void doesWalk() { this.walks = true; }
     protected void doesSlide() { this.slides = true; }
 
-    public boolean getLaysEggs() { return laysEggs; }
-    public boolean getGivesBirth() { return givesBirth; }
-    public boolean getSwims() { return swims; }
-    public boolean getWalks() { return walks; }
-    public boolean getSlides() { return slides; }
+    public boolean doesAnimalLayEggs() { return laysEggs; }
+    public boolean doesAnimalGiveBirth() { return givesBirth; }
+    public boolean doesAnimalSwim() { return swims; }
+    public boolean doesAnimalWalk() { return walks; }
+    public boolean doesAnimalSlide() { return slides; }
 
 
     public void eats() {

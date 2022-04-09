@@ -1,3 +1,3 @@
 public interface LaysEggs {
-    void laysEggs();
+    String laysEggs();
 }

@@ -21,12 +21,12 @@ public class Dolphin extends Animal implements Swimmable, GivesBirth{
     }
 
 
-    public void givesBirth() {
-        System.out.println("A dolphin is an aquatic mammal");
+    public String givesBirth() {
+        return "A dolphin is an aquatic mammal";
     }
 
     @Override
-    public void swim() {
-        System.out.println("A dolphin can swim incredibly fast!");
+    public String swim() {
+        return "A dolphin can swim incredibly fast!";
     }
 }

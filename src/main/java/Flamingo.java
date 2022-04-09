@@ -21,12 +21,12 @@ public class Flamingo extends Animal implements LaysEggs, Walks{
     }
 
     @Override
-    public void laysEggs() {
-        System.out.println("A flamingo lays eggs every day!");
+    public String laysEggs() {
+        return "A flamingo lays eggs every day!";
     }
 
     @Override
-    public void walks() {
-        System.out.println("A flamingo walks funny!");
+    public String walks() {
+        return "A flamingo walks funny!";
     }
 }

@@ -1,3 +1,3 @@
 public interface Walks {
-    void walks();
+    String walks();
 }

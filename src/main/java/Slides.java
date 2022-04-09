@@ -1,3 +1,3 @@
 public interface Slides {
-    void slides();
+    String slides();
 }

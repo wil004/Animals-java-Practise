@@ -42,31 +42,31 @@ public class AnimalTest {
     @Test void testsBooleanLaysEggsIsTrue() {
         Animal lion = new Lion("Lion", "test", "testDob", "testSpecies", "testFood", 25, 40);
         lion.doesLayEggs();
-        assertTrue(lion.getLaysEggs());
+        assertTrue(lion.doesAnimalLayEggs());
     }
 
     @Test void testsBooleanGivesBirthIsTrue() {
         Animal lion = new Lion("Lion", "test", "testDob", "testSpecies", "testFood", 25, 40);
         lion.doesGiveBirth();
-        assertTrue(lion.getGivesBirth());
+        assertTrue(lion.doesAnimalGiveBirth());
     }
 
     @Test void testsBooleanDoesSlideIsTrue() {
         Animal lion = new Lion("Lion", "test", "testDob", "testSpecies", "testFood", 25, 40);
         lion.doesSlide();
-        assertTrue(lion.getSlides());
+        assertTrue(lion.doesAnimalSlide());
     }
 
     @Test void testsBooleanDoesWalkIsTrue() {
         Animal lion = new Lion("Lion", "test", "testDob", "testSpecies", "testFood", 25, 40);
         lion.doesWalk();
-        assertTrue(lion.getWalks());
+        assertTrue(lion.doesAnimalWalk());
     }
 
     @Test void testsBooleanDoesSwimIsTrue() {
         Animal lion = new Lion("Lion", "test", "testDob", "testSpecies", "testFood", 25, 40);
         lion.doesSwim();
-        assertTrue(lion.getSwims());
+        assertTrue(lion.doesAnimalSwim());
     }
 
 }

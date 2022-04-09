@@ -21,12 +21,12 @@ public class Shark extends Animal implements LaysEggs, Swimmable{
     }
 
     @Override
-    public void laysEggs() {
-        System.out.println("The shark lays eggs a few times a year");
+    public String laysEggs() {
+        return "The shark lays eggs a few times a year";
     }
 
     @Override
-    public void swim() {
-        System.out.println("To catch a predator the shark swims very fast");
+    public String swim() {
+        return "To catch a predator the shark swims very fast";
     }
 }
